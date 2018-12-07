@@ -5,11 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+   <script src="jquery-3.3.1.min.js"></script>
+  <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
     <%= yield %>
   </body>
 </html>
