@@ -1,0 +1,44 @@
+<h2><%= @user.name %>さんのマイページ</h2>
+<div class="container">
+  <div class="row">
+      <aside class="col-md-8">
+        <%= link_to "topページへ戻る", root_path %>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-info" style="text-align: center"><strong>ユーザープロフィール</strong></li>
+            <li class="list-group-item"><strong>施設写真</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= attachment_image_tag @user, :image, :fill, 500, 300, format: 'jpeg' %></li>
+            <li class="list-group-item"><strong>施設名</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.name %></li>
+            <li class="list-group-item"><strong>メールアドレス</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= @user.email %></li>
+            <li class="list-group-item"><strong>電話番号</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= @user.telephone %></li>
+            <li class="list-group-item"><strong>郵便番号</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;〒<%= @user.postcode %></li>
+            <li class="list-group-item"><strong>住所</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.address %></li>
+            <li class="list-group-item"><strong>紹介文</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.introduction %></li>
+            <li class="list-group-item"><strong>紹介動画</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.url %></li>
+            <li class="list-group-item"><strong>評価ランク</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>☆★★★★(4.0)</li>
+            <li class="list-group-item"><strong>最新口コミ</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>(user.reviews)とても親切な介護士さんが多く在籍している印象です。体験入所で丁寧な案内をしていただきました、満足しています</li>
+          </ul>
+            <% if @user.id == current_user.id %>
+             <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-success " %></p>
+            <% end %>
+      </aside>
+      <aside class="col-md-4">
+        <% if current_user && logger %>
+          <section class="message_box">
+            <div id="messages">
+              <%= render @messages %>
+            </div>
+          </section>
+          <script type="text/javascript">
+            var height = 0;
+            $("div.message").each( function() {
+              height += ($(this).height());
+            });
+            $('section.message_box').scrollTop(height);
+          </script>
+          <div class="message_form">
+          <%= render 'messages/message_form',
+            {from_user: current_user, to_user: @user, room_id: @room_id} %>
+          </div>
+        <% end %>
+      </aside>
+  </div>
+</div>
