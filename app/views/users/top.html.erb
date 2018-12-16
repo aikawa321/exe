@@ -1,2 +1,201 @@
-ここはTOPページです。
-<%= link_to"まいぺーじ", user_path(current_user)%>
+<div class="main-visual">
+  <div class="message-container">
+    <h2 class="top-message">『あなたを支えたい』がここにある。</h2>
+    <p class=message>私たちがあなたに合った老人ホーム探しの <br>
+    お手伝いをさせていただきます。</p>
+  </div>
+</div>
+
+<h1>フリーワード検索</h1>
+<%= form_tag(root_path,:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag '検索する', :name => nil %>
+<% end %>
+
+<h1>地域検索</h1>
+<div class="jap">
+    <div class="map-header">
+        <h2 class="fa fa-search">地域を選んで検索</h2>
+    </div>
+    <div class="hokkaidou balloon-down">
+        <%= link_to"北海道", area_search_path(id: 1), class: "btn btn-default"%>
+    </div>
+    <div class="tohoku balloon-left">
+        <%= link_to"青森県", area_search_path(id: 2), class: "btn btn-default"%>
+        <%= link_to"岩手県", area_search_path(id: 3), class: "btn btn-default"%>
+        <%= link_to"宮城県", area_search_path(id: 4), class: "btn btn-default"%>
+        <%= link_to"秋田県", area_search_path(id: 5), class: "btn btn-default"%>
+        <%= link_to"山形県", area_search_path(id: 6), class: "btn btn-default"%>
+        <%= link_to"福島県", area_search_path(id: 7), class: "btn btn-default"%>
+    </div>
+    <div class="kantou balloon-left">
+        <%= link_to"茨城県", area_search_path(id: 8), class: "btn btn-default"%>
+        <%= link_to"栃木県", area_search_path(id: 9), class: "btn btn-default"%>
+        <%= link_to"群馬県", area_search_path(id: 10), class: "btn btn-default"%>
+        <%= link_to"埼玉県", area_search_path(id: 11), class: "btn btn-default"%>
+        <%= link_to"千葉県", area_search_path(id: 12), class: "btn btn-default"%>
+        <%= link_to"東京都", area_search_path(id: 13), class: "btn btn-default"%>
+        <%= link_to"神奈川県", area_search_path(id: 14), class: "btn btn-default"%>
+    </div>
+    <div class="tyubu balloon-down">
+        <%= link_to"新潟県", area_search_path(id: 15), class: "btn btn-default"%>
+        <%= link_to"富山県", area_search_path(id: 16), class: "btn btn-default"%>
+        <%= link_to"石川県", area_search_path(id: 17), class: "btn btn-default"%>
+        <%= link_to"福井県", area_search_path(id: 18), class: "btn btn-default"%>
+        <%= link_to"山梨県", area_search_path(id: 19), class: "btn btn-default"%>
+        <%= link_to"長野県", area_search_path(id: 20), class: "btn btn-default"%>
+        <%= link_to"岐阜県", area_search_path(id: 21), class: "btn btn-default"%>
+        <%= link_to"静岡県", area_search_path(id: 22), class: "btn btn-default"%>
+        <%= link_to"愛知県", area_search_path(id: 23), class: "btn btn-default"%>
+    </div>
+    <div class="kinki balloon-left">
+        <%= link_to"三重県", area_search_path(id: 24), class: "btn btn-default"%>
+        <%= link_to"滋賀県", area_search_path(id: 25), class: "btn btn-default"%>
+        <%= link_to"京都府", area_search_path(id: 26), class: "btn btn-default"%>
+        <%= link_to"大阪府", area_search_path(id: 27), class: "btn btn-default"%>
+        <%= link_to"兵庫県", area_search_path(id: 28), class: "btn btn-default"%>
+        <%= link_to"奈良県", area_search_path(id: 29), class: "btn btn-default"%>
+        <%= link_to"和歌山県", area_search_path(id: 30), class: "btn btn-default"%>
+    </div>
+    <div class="tyugoku balloon-down">
+        <%= link_to"鳥取県", area_search_path(id: 31), class: "btn btn-default"%>
+        <%= link_to"島根県", area_search_path(id: 32), class: "btn btn-default"%>
+        <%= link_to"岡山県", area_search_path(id: 33), class: "btn btn-default"%>
+        <%= link_to"広島県", area_search_path(id: 34), class: "btn btn-default"%>
+        <%= link_to"山口県", area_search_path(id: 35), class: "btn btn-default"%>
+    </div>
+    <div class="sikoku balloon-top">
+        <%= link_to"徳島県", area_search_path(id: 36), class: "btn btn-default"%>
+        <%= link_to"香川県", area_search_path(id: 37), class: "btn btn-default"%>
+        <%= link_to"愛媛県", area_search_path(id: 38), class: "btn btn-default"%>
+        <%= link_to"高知県", area_search_path(id: 39), class: "btn btn-default"%>
+    </div>
+    <div class="kyusyu balloon-right">
+        <%= link_to"福岡県", area_search_path(id: 40), class: "btn btn-default"%>
+        <%= link_to"佐賀県", area_search_path(id: 41), class: "btn btn-default"%>
+        <%= link_to"長崎県", area_search_path(id: 42), class: "btn btn-default"%>
+        <%= link_to"熊本県", area_search_path(id: 43), class: "btn btn-default"%>
+        <%= link_to"大分県", area_search_path(id: 44), class: "btn btn-default"%>
+        <%= link_to"宮崎県", area_search_path(id: 45), class: "btn btn-default"%>
+        <%= link_to"鹿児島県", area_search_path(id: 46), class: "btn btn-default"%>
+    </div>
+    <div class="okinawa balloon-right">
+        <%= link_to"沖縄県", area_search_path(id: 47), class: "btn btn-default"%>
+    </div>
+</div>
+
+
+<h1>施設の種類から探す</h1>
+<div class="clearfix">
+    <p class="tab_btn is-active-btn btn-default btn-origin" href="#item1">介護付有料老人ホーム</p>
+    <p class="tab_btn btn-default btn-origin" href="#item2">住宅型有料老人ホーム</p>
+    <p class="tab_btn btn-default btn-origin" href="#item3">健康型有料老人ホーム</p>
+    <p class="tab_btn btn-default btn-origin" href="#item4">サービス付き高齢者向け住宅</p>
+    <p class="tab_btn btn-default btn-origin" href="#item5">グループホーム</p>
+    <p class="tab_btn btn-default btn-origin" href="#item6">特別養護老人ホーム(特養)</p>
+    <p class="tab_btn btn-default btn-origin" href="#item7">介護老人保健施設(老健)</p>
+    <p class="tab_btn btn-default btn-origin" href="#item8">介護療養型医療施設(療養病床)</p>
+    <p class="tab_btn btn-default btn-origin" href="#item9">ケアハウス</p>
+  <!-- タブのコンテンツ部分 -->
+  <div class="tab_item is-active-item" id="item1">
+        <h1>介護付有料老人ホーム</h1>
+        <div class="text-container">
+            <h2 class="fa fa-graduation-cap">介護付有料老人ホームとは？</h2>
+            <h3>介護等のサービスが付いた高齢者向けの居住施設であり、介護が必要となっても、当該有料老人ホームが提供する特定施設入居者生活介護を利用しながら当該有料老人ホームの居室で生活を継続することが可能である。<br>介護サービスは有料老人ホームの職員が提供することとなっており、特定施設入居者生活介護の指定を受けていない有料老人ホームについては介護付と表示することはできない。<br>2006年より、介護サービス情報の公表制が導入され、介護付有料老人ホーム（特定施設入居者生活介護）の基本情報項目（自主申告の情報）、調査情報項目（調査員により客観的に確認された情報）がインターネット上で見ることが出来るようになっている</h3><p class="wiki">-wikipedia参照-</p>
+        </div>
+        <% @search_a.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+
+  <div class="tab_item" id="item2">
+  <h1>住宅型有料老人ホーム</h1>
+    <div class="text-container">
+    <h2 class="fa fa-graduation-cap">住宅型有料老人ホームとは？</h2>
+    <h3>生活支援等のサービスが付いた高齢者向けの居住施設であり、介護が必要となった場合、入居者自身の選択により、地域の訪問介護等の介護サービスを利用しながら当該有料老人ホームの居室での生活を継続することが可能である。要介護度が重度になった場合、特定施設入居者生活介護より介護保険費用がかかるとされている。</h3><p class="wiki">-wikipedia参照-</p>
+    </div>
+      <% @search_b.each do |s| %>
+      <%= render 'users/search_result', user:s %>
+      <% end %>
+  </div>
+
+  <div class="tab_item" id="item3">
+    <h1>健康型有料老人ホーム</h1>
+        <div class="text-container">
+            <h2 class="fa fa-graduation-cap">健康型有料老人ホームとは？</h2>
+            <h3>食事等のサービスが付いた高齢者向けの居住施設であるが、介護が必要となった場合には、契約を解除し退去しなければならない。全国的にも数は非常に少ない。</h3><p class="wiki">-wikipedia参照-</p>
+        </div>
+      <% @search_c.each do |s| %>
+       <%= render 'users/search_result', user:s %>
+      <% end %>
+  </div>
+
+  <div class="tab_item" id="item4">
+    <h1>サービス付き高齢者向け住宅</h1>
+        <div class="text-container">
+            <h2 class="fa fa-graduation-cap">サービス付き高齢者向け住宅とは？</h2>
+            <h3>日本において、高齢者住まい法の基準により登録される、介護・医療と連携し、高齢者の安心を支えるサービスを提供する、バリアフリー構造の住宅。「サ高住」（さこうじゅう）と略して呼ばれることが多い。また、権利関係は賃貸借方式が一般的である。<br>ケアの専門家（社会福祉法人・医療法人・指定居宅サービス事業所等の職員、医師、看護師、介護福祉士、社会福祉士、介護支援専門員、介護職員初任者研修課程修了者）が少なくとも日中常駐し、安否確認サービスと生活相談サービスを、すべての入居者に対して提供する。常駐していない時間は、各居住部分に必要に応じて通報する装置を設置して、状況把握サービスを提供する</h3><p class="wiki">-wikipedia参照-</p>
+        </div>
+        <% @search_d.each do |s| %>
+       <%= render 'users/search_result', user:s %>
+      <% end %>
+  </div>
+
+  <div class="tab_item" id="item5">
+      <h1>グループホーム</h1>
+          <div class="text-container">
+            <h2 class="fa fa-graduation-cap">グループホームとは？</h2>
+            <h3>介護保険制度では、グループホームといえば認知症高齢者型を指す。<br>グループホーム（group home）とは、病気や障害などで生活に困難を抱えた人達が、専門スタッフ等の援助を受けながら、小人数、一般の住宅で生活する社会的介護の形態のことである。そこでは、地域社会に溶け込むように生活することが理想とされる。集団生活型介護という言い方もある。</h3><p class="wiki">-wikipedia参照-</p>
+          </div>
+      <% @search_e.each do |s| %>
+       <%= render 'users/search_result', user:s %>
+      <% end %>
+  </div>
+
+  <div class="tab_item" id="item6">
+      <h1>特別養護老人ホーム(特養)</h1>
+          <div class="text-container">
+            <h2 class="fa fa-graduation-cap">特別養護老人ホーム(特養)とは？</h2>
+            <h3>介護老人福祉施設（かいごろうじんふくししせつ）とは、介護保険法に基づいて介護保険が適用される介護サービスを手掛ける施設である。これらの施設は老人福祉法第11条に基づく市町村による入所措置の対象施設となっており、その文脈では特別養護老人ホーム（通称：特養）と呼ばれる。基本的に、要介護3から5のいずれかの要介護認定を受けている人が対象となる。サービス内容は30日以下に限定して宿泊するショートステイ。昼間に送迎付きの通いでサービスを受けるデイサービスなどがある。</h3><p class="wiki">-wikipedia参照-</p>
+          </div>
+      <% @search_f.each do |s| %>
+       <%= render 'users/search_result', user:s %>
+      <% end %>
+  </div>
+  <div class="tab_item" id="item7">
+      <h1>介護老人保健施設(老健)</h1>
+          <div class="text-container">
+            <h2 class="fa fa-graduation-cap">介護老人保健施設(老健)とは？</h2>
+            <h3>介護保険が適用される介護サービスで、在宅への復帰を目標に心身の機能回復訓練をする施設。また療養型介護老人保健施設（りょうようがたかいごろうじんほけんしせつ）とは、介護保険が適用される介護サービスで、病気や障害で自宅での生活が困難または在宅への復帰が困難な高齢者の日常生活の介護をする施設。通称、療養型老健または療養型老人保健施設。</h3><p class="wiki">-wikipedia参照-</p>
+          </div>
+      <% @search_g.each do |s| %>
+       <%= render 'users/search_result', user:s %>
+      <% end %>
+  </div>
+  <div class="tab_item" id="item8">
+      <h1>介護療養型医療施設(療養病床)</h1>
+          <div class="text-container">
+            <h2 class="fa fa-graduation-cap">介護療養型医療施設(療養病床)とは？</h2>
+            <h3>医療法に基づき、病状が安定期にある要介護者に対し、医学的管理のもとに介護その他の世話や必要な医療を行う施設である。</h3><p class="wiki">-wikipedia参照-</p>
+          </div>
+      <%= @search_h.each do |s| %>
+       <%= render 'users/search_result', user:s %>
+      <% end %> , images:@images
+  </div>
+  <div class="tab_item" id="item9">
+      <h1>ケアハウス</h1>
+          <div class="text-container">
+            <h2 class="fa fa-graduation-cap">ケアハウスとは？</h2>
+            <h3>軽費老人ホームにおけるC型の事を指す。軽費老人ホームとは、無料又は低額な料金で、60歳以上の者を入所させ、食事の提供その他日常生活上必要な便宜を供与することを目的とする施設（老人デイサービスセンター、老人短期入所施設、養護老人ホーム、特別養護老人ホームを除く）のことである。食事サービスのあるA型、自炊を前提とするB型、食事や生活介護などが付帯するC型（ケアハウス）の3つの種類があり、C型の開設件数が増加している。</h3><p class="wiki">-wikipedia参照-</p>
+          </div>
+      <%= @search_i.each do |s| %>
+       <%= render 'users/search_result', user:s %>
+      <% end %>
+  </div>
+</div>
+<h1>施設一覧</h1>
+<div>
+<% @users.each do |s|  %>
+ <%= render'users/search_result',user:s %>
+ <% end %>
+</div>

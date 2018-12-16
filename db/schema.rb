@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2018_12_06_103455) do
 
   create_table "images", force: :cascade do |t|
     t.integer "user_id"
+    t.text "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,8 +52,7 @@ ActiveRecord::Schema.define(version: 2018_12_06_103455) do
     t.integer "lank"
     t.integer "kind_id"
     t.integer "review_id"
-    t.float "latitude"
-    t.float "longitude"
+    t.integer "area_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -6,38 +6,46 @@
                         <div class="col-xs-6">
                             <h1>プロフィール編集</h1>
                         <%= form_for(@user) do |f| %>
-                            <div class="field">
-                                <%= f.label :施設画像 %><br />
-                                <%= f.attachment_field :image, placeholder: "施設画像" %>
-                            <div>
+
                             <div class="field">
                                 <%= f.label :施設名 %><br />
-                                <%= f.text_field :name ,placeholder: "施設の名前"  %>
+                                <%= f.text_field :name ,placeholder: "施設の名前", class:"form-control"%>
                             </div>
                             <div class="field">
                                 <%= f.label :email %><br />
-                                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                                <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
                             </div>
                             <div class="field">
                                 <%= f.label :電話番号 %><br />
-                                <%= f.text_field :telephone ,placeholder: "TEL"  %>
+                                <%= f.text_field :telephone ,placeholder: "TEL", class:"form-control"%>
                             </div>
                             <div class="field">
                                 <%= f.label :郵便番号 %><br />
-                                <%= f.text_field :postcode , placeholder: "○○○-○○○○" %>
+                                <%= f.text_field :postcode , placeholder: "○○○-○○○○", class:"form-control"%>
                             </div>
                             <div class="field">
                                 <%= f.label :住所 %><br />
-                                <%= f.text_field :address ,placeholder: "住所"  %>
+                                <%= f.text_field :address ,placeholder: "住所", class:"form-control"%>
+                            </div>
+                            <div class="field">
+                                <%= f.label :施設タイプ %><br />
+                                <%= f.select :kind_id, User.kind_ids.keys, {prompt: '選択してください'}, class:"form-control" %>
                             </div>
                             <div class="field">
                                 <%= f.label :紹介文 %><br />
-                                <%= f.text_field :introduction ,placeholder: "紹介文を書いてください"  %>
+                                <%= f.text_field :introduction ,placeholder: "紹介文を書いてください", class:"form-control"  %>
                             </div>
                             <div class="field">
                                 <%= f.label :紹介動画 %><br />
-                                <%= f.text_field :url ,placeholder: "埋め込み用のURLを入れてください。例：http://〇〇.〇〇"  %>
+                                <%= f.text_field :url ,placeholder: "埋め込み用のURLを入れてください。例：http://〇〇.〇〇", class:"form-control"  %>
                             </div>
+                            <div class="field">
+                            <%= f.attachment_field :images_images, multiple: true %>
+                            <%= f.attachment_field :images_images, multiple: true %>
+                            <%= f.attachment_field :images_images, multiple: true %>
+                            <%= f.attachment_field :images_images, multiple: true %>
+                            <%= f.attachment_field :images_images, multiple: true %>
+                            <div>
                          <%= f.submit "変更を保存", class:"btn" %>
                         <% end %>
                         </div>
