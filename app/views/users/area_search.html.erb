@@ -1,0 +1,6 @@
+<%= link_to"トップページへ戻る", root_path, class:"btn btn-default" %>
+<%= render 'users/t_search' %>
+<h1>検索結果</h1>
+　<% @search_users.each do |s| %>
+    <%= render 'users/search_result', user:s %>
+　<% end %>

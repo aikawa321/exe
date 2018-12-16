@@ -1,0 +1,368 @@
+body {
+ padding-top: 60px;
+ background: linear-gradient(#ffffff, #fce4ec,#ffffff);
+}
+ .navbar-default {
+background-color: #65baad;
+border-color: #3e6962;
+}
+/* navbar テキストカラー */
+.navbar-default .navbar-nav > li > a {
+color: #ffffff;
+}
+/* navbar hover,focus時のテキストカラー */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+color: #26534c;
+background-color: transparent;
+}
+/* navbar active設定時のカラー */
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+color: #26534c;
+background-color: #c3ede7;
+}
+/* navbar ドロップダウン(親)のカラー */
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover {
+color: #3e6962;
+background-color: #c3ede7;
+}
+/* navbar ドロップダウン(子)のボックスカラー */
+.dropdown-menu {
+background-color: #65baad;
+border: 1px solid #3e6962;
+border: 1px solid #3e6962(0, 0, 0, .15);
+-webkit-box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
+box-shadow: 0 6px 12px rgba(94, 136, 129, 0.35);
+}
+/* navbar ドロップダウン(子)テキストカラー */
+.dropdown-menu>li>a {
+color: #ffffff;
+}
+/* navbar ドロップダウン(子)focus,hover時のカラー */
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+color: #26534c;
+background-color: #c3ede7;
+}
+/* navbar ドロップダウン(子)内の区切り線(class=”divider”)のカラー */
+.dropdown-menu .divider {
+background-color: #3e6962;
+}
+span.head{
+	font-size:30px;
+}
+.fa-heart{
+color:#e91e63;
+}
+.main-visual {
+  width: 100%;
+	height: 650px;
+	background-image: image-url('back.jpg');
+	background-size: cover;
+	background-position: center;
+}
+.message-container{
+	color: #fce4ec;
+	float: right;
+}
+.top-message{
+	font-size: 35px;
+}
+.message{
+	font-size:25px;
+	text-align: center;
+}
+.list-group-item{
+	font-size: 18px;
+}
+.btn-show{
+	background-color: hotpink;
+}
+// 地図
+.map-header{
+	width: 45%;
+	background-color: #FFF;
+	padding: 10px;
+	margin-bottom: 5px;
+	border-top: 15px solid #494949;
+	position: absolute;
+	top: 50px;
+	left: -150px;
+}
+.balloon-top {
+	position: relative;
+	display: inline-block;
+ 	margin: 1.5em 0;
+	padding: 7px 10px;
+	min-width: 120px;
+ 	max-width: 100%;
+ 	color: #555;
+	font-size: 16px;
+	border-radius: 15px;
+}
+.balloon-top:before{
+	content: "";
+	position: absolute;
+	top: -30px;
+	left: 50%;
+ 	margin-left: -15px;
+	border: 15px solid transparent;
+	border-bottom: 15px solid #494949
+}
+.balloon-left {
+ 	position: relative;
+	display: inline-block;
+ 	margin: 1.5em 0 1.5em 15px;
+	padding: 7px 10px;
+	min-width: 120px;
+ 	max-width: 100%;
+ 	color: #494949;
+	font-size: 16px;
+	background: #494949;
+	border-radius: 15px;
+}
+.balloon-left:before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: -30px;
+ 	margin-top: -15px;
+	border: 15px solid transparent;
+	border-right: 15px solid #494949;
+}
+.balloon-down {
+ 	position: relative;
+	display: inline-block;
+ 	margin: 1.5em 0;
+	padding: 7px 10px;
+ 	max-width: 100%;
+ 	color: #555;
+	font-size: 16px;
+	border-radius: 15px
+}
+.balloon-down:before{
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+ 	margin-left: -15px;
+	border: 15px solid transparent;
+	border-top: 15px solid #494949;
+}
+.balloon-right {
+ 	position: relative;
+	display: inline-block;
+ 	margin: 1.5em 15px 1.5em 0;
+	padding: 7px 10px;
+ 	max-width: 100%;
+ 	color: #555;
+	font-size: 16px;
+	border-radius: 15px
+}
+.balloon-right:before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 100%;
+ 	margin-top: -15px;
+	border: 15px solid transparent;
+	border-left: 15px solid #494949;
+}
+.jap{
+	margin:0 auto;
+	width:45%;
+	height: 650px;
+	background-image: image-url('jap.png');
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+.hokkaidou{
+	position:absolute;
+	left:530px;
+	float: right;
+	padding: 15;
+	height: 50px;
+	width: 90px;
+	background-color: #494949;
+}
+.tohoku{
+	position:absolute;
+	top:130px;
+	left: 630px;
+	padding: 10px ;
+	height: 120px;
+	width: 170px;
+	background-color: #494949;
+}
+.kantou{
+	position:absolute;
+	top:300px;
+	left:630px;
+	padding: 10px ;
+	height: 160px;
+	width: 170px;
+	background-color:#494949;
+}
+.tyubu{
+	position:absolute;
+	float: right;
+	margin: 0;
+	padding: 0;
+	top:80px;
+	left:320px;
+	padding: 10px ;
+	height: 190px;
+	width: 165px;
+	background-color: #494949;
+}
+.kinki{
+	position:absolute;
+	top:470px;
+	left:350px;
+	padding: 10px ;
+	height: 90px;
+	width: 320px;
+	background-color: #494949;
+}
+.tyugoku{
+	position:absolute;
+	top:200px;
+	left:130px;
+	padding: 10px ;
+	height: 120px;
+	width: 165px;
+	background-color: #494949;
+}
+.sikoku{
+	position:absolute;
+	top:550px;
+	left:150px;
+	padding: 10px ;
+	height: 90px;
+	width: 165px;
+	background-color: #494949;
+}
+.kyusyu{
+	position:absolute;
+	top:300px;
+	left:-180px;
+	padding: 10px ;
+	height: 160px;
+	width: 165px;
+	background-color: #494949;
+}
+.okinawa{
+	position:absolute;
+	top:570px;
+	left: -47px;
+	padding: 10px ;
+	height: 60px;
+	width: 90px;
+	background-color: #494949;
+}
+/*最低限タブが機能するのに必要なスタイル*/
+.tab_item {
+	display: none;
+}
+.is-active-item {
+	display: block;
+}
+.clearfix::after{
+	content: "";
+  display: block;
+  clear: both;
+}
+.btn-default{
+	display: inline-block;
+	padding: 7px 20px;
+	border-radius: 25px;
+	color: #FFF;
+	background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+	background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+	transition: .4s;
+}
+.btn-default:hover {
+	background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+	background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+	font-weight: bold;
+}
+.btn-origin{
+	font-size: 25px;
+	border-radius: 5px;
+	margin:10px auto;
+}
+.text-container{
+	margin:0 auto;
+	width:99%;
+	background-color: #FFF;
+	padding: 10px;
+	margin-bottom: 5px;
+	border-top: 15px solid #494949;
+}
+.wiki{
+	text-align: right
+}
+
+
+
+/* navbar 画面サイズ767px以下の時のカラー */
+@media (max-width:767px) {
+.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+color: #ffffff;
+}
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+color: #26534c;
+background-color: transparent;
+}
+/* ドロップダウンactive設定時のカラー */
+.navbar-default .navbar-nav .open .dropdown-menu>.active>a,
+.navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus,
+.navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover {
+color: #ffb163;
+background-color: #d4ede9;
+}
+}
+/* navbar ハンバーガー四角枠 */
+.navbar-default .navbar-toggle {
+border-color: #ffffff;
+}
+/* navbar ハンバーガー三本線 */
+.navbar-default .navbar-toggle .icon-bar {
+background-color: #ffffff;
+}
+/* navbar ハンバーガーボタン,タップとホバーした時の背景色 */
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+background-color: #ffffff;
+}
+/* navbar ハンバーガーボタン,タップとホバーした時の四角枠 */
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+border-color: #65baad;
+}
+/* navbar ハンバーガーボタン,タップとホバーした時の三本線 */
+.navbar-default .navbar-toggle:focus > .icon-bar,
+.navbar-default .navbar-toggle:hover > .icon-bar {
+background-color: #65baad;
+}
+/* navbar Brandのカラー */
+.navbar-default .navbar-brand {
+color: #ff5555;
+}
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+color: #ff5555;
+background-color: transparent;
+}
+h1 {
+padding: 0.3em;/*文字周りの余白*/
+color: #494949;/*文字色*/
+background: #fffaf4;/*背景色*/
+border-left: solid 5px #ffaf58;/*左線（実線 太さ 色）*/
+}

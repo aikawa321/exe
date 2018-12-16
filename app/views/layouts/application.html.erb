@@ -1,17 +1,79 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Exe</title>
+    <title>Nusing_Home</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="//maps.google.com/maps/api/js?key=AIzaSyDImgYaMym5UukQ3IVw25uaDpFZFAIQiVo"></script>
+    <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css"
+    type="text/css" media="all" /><link rel="stylesheet" href="dist/css/swiper.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   </head>
 
   <body>
-   <script src="jquery-3.3.1.min.js"></script>
-  <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %></li>
-    <%= yield %>
+
+  <header class="navbar navbar-fixed-top navbar-default">
+      <div class="container">
+        <nav class="nav navbar-nav navbar-left">
+          <span class="head"><i class="fas fa-heart faa-pulse animated"></i>NursingHome</span>
+        </nav>
+        <nav>
+           <ul class="nav navbar-nav navbar-right">
+              <% if user_signed_in? %>
+              <li><%= link_to ' Home',user_path(current_user.id), class: "glyphicon glyphicon-home home" %></li>
+              <li><%= link_to " logout", destroy_user_session_path, class: "glyphicon glyphicon-log-out logout", method: :delete %></li>
+              <li><%= link_to "TOP", root_path, class: "glyphicon glyphicon-home home" %></li>
+              <!-- ログイン後↑ -->
+              <% else %>
+              <!-- ログイン前↓ -->
+              <li><%= link_to ' Home', "/", class: "glyphicon glyphicon-home home" %></li>
+              <li><%= link_to " sign up", new_user_registration_path, class: "glyphicon glyphicon-edit sign_up" %></li>
+              <li><%= link_to " login", new_user_session_path, class: "glyphicon glyphicon-log-in sign_in" %></li>
+              <% end %>
+          </ul>
+        </nav>
+      </div>
+      </header >
+        <%= yield %>
+
+        <script>
+          $(function() {
+            /*クリックイベント*/
+            $('.tab_btn').on('click', function() {
+              $('.tab_item').removeClass("is-active-item");
+              $($(this).attr("href")).addClass("is-active-item");
+              $('.tab_btn').removeClass('is-active-btn');
+              $(this).addClass('is-active-btn');
+            });
+          });
+        </script>
+        <script>
+          var galleryThumbs = new Swiper('.gallery-thumbs', {
+            spaceBetween: 10,
+            slidesPerView: 4,
+            loop: true,
+            freeMode: true,
+            loopedSlides: 5, //looped slides should be the same
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+          });
+          var galleryTop = new Swiper('.gallery-top', {
+            spaceBetween: 10,
+            loop:true,
+            loopedSlides: 5, //looped slides should be the same
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            thumbs: {
+              swiper: galleryThumbs,
+            },
+          });
+        </script>
   </body>
 </html>

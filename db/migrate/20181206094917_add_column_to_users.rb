@@ -9,7 +9,6 @@ class AddColumnToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :lank, :integer
     add_column :users, :kind_id, :integer
     add_column :users, :review_id, :integer
-    add_column :users, :latitude, :float
-    add_column :users, :longitude, :float
+    add_column :users, :area_id, :integer
   end
 end
