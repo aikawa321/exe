@@ -18,15 +18,15 @@
         <h2 class="fa fa-search">地域を選んで検索</h2>
     </div>
     <div class="hokkaidou balloon-down">
-        <%= link_to"北海道", area_search_path(id: 1), class: "btn btn-default"%>
+        <p class="tab_btn is-active-btn btn-default btn-origin btn" href="#hokkaidou">北海道</p>
     </div>
     <div class="tohoku balloon-left">
-        <%= link_to"青森県", area_search_path(id: 2), class: "btn btn-default"%>
-        <%= link_to"岩手県", area_search_path(id: 3), class: "btn btn-default"%>
-        <%= link_to"宮城県", area_search_path(id: 4), class: "btn btn-default"%>
-        <%= link_to"秋田県", area_search_path(id: 5), class: "btn btn-default"%>
-        <%= link_to"山形県", area_search_path(id: 6), class: "btn btn-default"%>
-        <%= link_to"福島県", area_search_path(id: 7), class: "btn btn-default"%>
+        <p class="tab_btn btn-default btn-origin btn" href="#aomori">青森県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#iwate">岩手県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#miyagi">宮城県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#akita">秋田県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#yamagata">山形県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#hukusima">福島県</p>
     </div>
     <div class="kantou balloon-left">
         <%= link_to"茨城県", area_search_path(id: 8), class: "btn btn-default"%>
@@ -83,8 +83,285 @@
         <%= link_to"沖縄県", area_search_path(id: 47), class: "btn btn-default"%>
     </div>
 </div>
-
-
+<!-- エリア別タブのコンテンツ部分 -->
+<div class="clearfix">
+    <div class="tab_item is-active-item" id="hokkaidou">
+        <h1>北海道</h1>
+        <% @search_hokkaidou.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="aomori">
+        <h1>青森県</h1>
+        <% @search_aomori.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="iwate">
+        <h1>岩手県</h1>
+        <% @search_iwate.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="miyagi">
+        <h1>宮城県</h1>
+        <% @search_miyagi.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="akita">
+        <h1>秋田県</h1>
+        <% @search_akita.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="yamagata">
+        <h1>山形県</h1>
+        <% @search_yamagata.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="hukusima">
+        <h1>福島県</h1>
+        <% @search_hukusima.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="ibaraki">
+        <h1>茨城県</h1>
+        <% @search_ibaraki.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="totigi">
+        <h1>栃木県</h1>
+        <% @search_totigi.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="gunma">
+        <h1>群馬県</h1>
+        <% @search_gunma.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="saitama">
+        <h1>埼玉県</h1>
+        <% @search_saitama.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="tiba">
+        <h1>千葉県</h1>
+        <% @search_tiba.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="tokyo">
+        <h1>東京都</h1>
+        <% @search_tokyo.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="kanagawa">
+        <h1>神奈川県</h1>
+        <% @search_kanagawa.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="niigata">
+        <h1>新潟県</h1>
+        <% @search_niigata.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="toyama">
+        <h1>富山県</h1>
+        <% @search_toyama.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="isikawa">
+        <h1>石川県</h1>
+        <% @search_isikawa.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="hukui">
+        <h1>福井県</h1>
+        <% @search_hukui.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="yamanashi">
+        <h1>山梨県</h1>
+        <% @search_yamanashi.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="nagano">
+        <h1>長野県</h1>
+        <% @search_nagano.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="gihu">
+        <h1>岐阜県</h1>
+        <% @search_gihu.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="sizuoka">
+        <h1>静岡県</h1>
+        <% @search_sizuoka.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="aiti">
+        <h1>愛知県</h1>
+        <% @search_aiti.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="mie">
+        <h1>三重県</h1>
+        <% @search_mie.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="shiga">
+        <h1>滋賀県</h1>
+        <% @search_shiga.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="kyoto">
+        <h1>京都府</h1>
+        <% @search_kyoto.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="oosaka">
+        <h1>大阪府</h1>
+        <% @search_oosaka.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="hyougo">
+        <h1>兵庫県</h1>
+        <% @search_hyougo.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="nara">
+        <h1>奈良県</h1>
+        <% @search_nara.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="wakayama">
+        <h1>和歌山県</h1>
+        <% @search_wakayama.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="tottori">
+        <h1>鳥取県</h1>
+        <% @search_tottori.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="simane">
+        <h1>島根県</h1>
+        <% @search_simane.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="okayama">
+        <h1>岡山県</h1>
+        <% @search_okayama.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="hiroshima">
+        <h1>広島県</h1>
+        <% @search_hiroshima.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="yamaguti">
+        <h1>山口県</h1>
+        <% @search_yamaguti.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="tokushima">
+        <h1>徳島県</h1>
+        <% @search_tokushima.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="kagawa">
+        <h1>香川県</h1>
+        <% @search_kagawa.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="ehime">
+        <h1>愛媛県</h1>
+        <% @search_ehime.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="kouti">
+        <h1>高知県</h1>
+        <% @search_kouti.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="hukuoka">
+        <h1>福岡県</h1>
+        <% @search_hukuoka.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="saga">
+        <h1>佐賀県</h1>
+        <% @search_saga.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="nagasaki">
+        <h1>長崎県</h1>
+        <% @search_nagasaki.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="ooita">
+        <h1>大分県</h1>
+        <% @search_ooita.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="miyazaki">
+        <h1>宮崎県</h1>
+        <% @search_miyazaki.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="kagoshima">
+        <h1>鹿児島県</h1>
+        <% @search_kagoshima.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+    <div class="tab_item" id="okinawa">
+        <h1>沖縄県</h1>
+        <% @search_okinawa.each do |s| %>
+        <%= render 'users/search_result', user:s %>
+        <% end %>
+    </div>
+</div>
 <h1>施設の種類から探す</h1>
 <div class="clearfix">
     <p class="tab_btn is-active-btn btn-default btn-origin" href="#item1">介護付有料老人ホーム</p>
@@ -96,7 +373,7 @@
     <p class="tab_btn btn-default btn-origin" href="#item7">介護老人保健施設(老健)</p>
     <p class="tab_btn btn-default btn-origin" href="#item8">介護療養型医療施設(療養病床)</p>
     <p class="tab_btn btn-default btn-origin" href="#item9">ケアハウス</p>
-  <!-- タブのコンテンツ部分 -->
+  <!-- 施設タイプ別タブのコンテンツ部分 -->
   <div class="tab_item is-active-item" id="item1">
         <h1>介護付有料老人ホーム</h1>
         <div class="text-container">
@@ -178,9 +455,9 @@
             <h2 class="fa fa-graduation-cap">介護療養型医療施設(療養病床)とは？</h2>
             <h3>医療法に基づき、病状が安定期にある要介護者に対し、医学的管理のもとに介護その他の世話や必要な医療を行う施設である。</h3><p class="wiki">-wikipedia参照-</p>
           </div>
-      <%= @search_h.each do |s| %>
+      <% @search_h.each do |s| %>
        <%= render 'users/search_result', user:s %>
-      <% end %> , images:@images
+      <% end %>
   </div>
   <div class="tab_item" id="item9">
       <h1>ケアハウス</h1>
@@ -188,7 +465,7 @@
             <h2 class="fa fa-graduation-cap">ケアハウスとは？</h2>
             <h3>軽費老人ホームにおけるC型の事を指す。軽費老人ホームとは、無料又は低額な料金で、60歳以上の者を入所させ、食事の提供その他日常生活上必要な便宜を供与することを目的とする施設（老人デイサービスセンター、老人短期入所施設、養護老人ホーム、特別養護老人ホームを除く）のことである。食事サービスのあるA型、自炊を前提とするB型、食事や生活介護などが付帯するC型（ケアハウス）の3つの種類があり、C型の開設件数が増加している。</h3><p class="wiki">-wikipedia参照-</p>
           </div>
-      <%= @search_i.each do |s| %>
+      <% @search_i.each do |s| %>
        <%= render 'users/search_result', user:s %>
       <% end %>
   </div>

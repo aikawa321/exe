@@ -1,0 +1,45 @@
+<%# ユーザープロフィールフォーマット（sign_up edit用） %>
+<div class="field">
+    <%= f.label :施設名 %><br />
+    <%= f.text_field :name ,placeholder: "施設の名前", class:"form-control"%>
+</div>
+<div class="field">
+    <%= f.label :施設タイプ %><br />
+    <%= f.select :kind_id, User.kind_ids.keys, {prompt: '選択してください'}, class:"form-control" %>
+</div>
+<div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+</div>
+<div class="field">
+    <%= f.label :電話番号 %><br />
+    <%= f.text_field :telephone ,placeholder: "TEL", class:"form-control"%>
+</div>
+<div class="field">
+    <%= f.label :郵便番号 %><br />
+    <%= f.text_field :postcode , placeholder: "○○○-○○○○", class:"form-control" %>
+</div>
+<div class="field">
+    <%= f.label :住所1 %><br />
+    <%= f.select :area_id, User.area_ids.keys, {prompt: '選択してください'}, class:"form-control" %>
+</div>
+<div class="field">
+    <%= f.label :住所2 %><br />
+    <%= f.text_field :address ,placeholder: "住所　都道府県以下をご入力ください。", class:"form-control"%>
+</div>
+<div class="field">
+    <%= f.label :紹介文 %><br />
+    <%= f.text_field :introduction ,placeholder: "施設の紹介文をご入力ください。", class:"form-control"  %>
+</div>
+<div class="field ">
+<%= f.label :メイン画像 %>
+  <%= f.attachment_field :images_images, multiple: true %>
+<%= f.label :サブ画像１ %>
+  <%= f.attachment_field :images_images, multiple: true %>
+<%= f.label :サブ画像２ %>
+  <%= f.attachment_field :images_images, multiple: true %>
+<%= f.label :サブ画像３ %>
+  <%= f.attachment_field :images_images, multiple: true %>
+<%= f.label :サブ画像４ %>
+  <%= f.attachment_field :images_images, multiple: true %>
+<div>
