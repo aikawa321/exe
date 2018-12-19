@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <title>Nusing_Home</title>
     <%= csrf_meta_tags %>
@@ -25,6 +25,9 @@
         <nav>
            <ul class="nav navbar-nav navbar-right">
               <% if user_signed_in? %>
+                <% if current_user.try(:admin?) %>
+                <p class="admin_btn col-xs-offset-1 col-xs-10 col-xs-offset-1"><%= link_to "管理画面", "/admin" %></p>
+              <% end %>
               <li><%= link_to ' Home',user_path(current_user.id), class: "glyphicon glyphicon-home home" %></li>
               <li><%= link_to " logout", destroy_user_session_path, class: "glyphicon glyphicon-log-out logout", method: :delete %></li>
               <li><%= link_to "TOP", root_path, class: "glyphicon glyphicon-home home" %></li>
