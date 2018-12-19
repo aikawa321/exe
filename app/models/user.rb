@@ -36,7 +36,7 @@ class User < ApplicationRecord
  }
   def self.search(search)
     if search
-    User.where(['name LIKE ?', "%#{search}%"]).or(User.where(['address LIKE ?', "%#{search}%"]))
+    User.where(['name LIKE ?', "%#{search}%"]).or(User.where(['area_id LIKE ?', "%#{search}%"]))
     else
     User.all
     end

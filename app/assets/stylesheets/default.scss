@@ -183,6 +183,7 @@ color:#e91e63;
 }
 .hokkaidou{
 	position:absolute;
+	top : 15px ;
 	left:530px;
 	float: right;
 	padding: 15;
@@ -192,10 +193,10 @@ color:#e91e63;
 }
 .tohoku{
 	position:absolute;
-	top:130px;
+	top:135px;
 	left: 630px;
 	padding: 10px ;
-	height: 120px;
+	height: 130px;
 	width: 170px;
 	background-color: #494949;
 }
@@ -204,7 +205,7 @@ color:#e91e63;
 	top:300px;
 	left:630px;
 	padding: 10px ;
-	height: 160px;
+	height: 170px;
 	width: 170px;
 	background-color:#494949;
 }
@@ -216,16 +217,16 @@ color:#e91e63;
 	top:80px;
 	left:320px;
 	padding: 10px ;
-	height: 190px;
+	height: 200px;
 	width: 165px;
 	background-color: #494949;
 }
 .kinki{
 	position:absolute;
-	top:470px;
+	top:480px;
 	left:350px;
 	padding: 10px ;
-	height: 90px;
+	height: 95px;
 	width: 320px;
 	background-color: #494949;
 }
@@ -234,7 +235,7 @@ color:#e91e63;
 	top:200px;
 	left:130px;
 	padding: 10px ;
-	height: 120px;
+	height: 130px;
 	width: 165px;
 	background-color: #494949;
 }
@@ -252,7 +253,7 @@ color:#e91e63;
 	top:300px;
 	left:-180px;
 	padding: 10px ;
-	height: 160px;
+	height: 165px;
 	width: 165px;
 	background-color: #494949;
 }
@@ -306,6 +307,10 @@ color:#e91e63;
 }
 .wiki{
 	text-align: right
+}
+.del-pad{
+	margin : 2px auto;
+	padding: 0 auto;
 }
 
 
