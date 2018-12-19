@@ -64,9 +64,11 @@ class UsersController < ApplicationController
       "#{second_user.id}-#{first_user.id}"
     end
   end
+  def infomation
 
+  end
   	private
   	def user_params
-      params.require(:user).permit(:name, :introduction,:url, :image,:telephone,:postcode,:address,:email, :kind_id,:area_id, :review_id, images_images: [])
+      params.require(:user).permit(:admin,:name, :introduction,:url, :image,:telephone,:postcode,:address,:email, :kind_id,:area_id, :review_id, images_images: [])
     end
 end
