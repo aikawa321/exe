@@ -6,362 +6,109 @@
   </div>
 </div>
 
-<h1>フリーワード検索</h1>
-<%= form_tag(root_path,:method => 'get') do %>
-  <%= text_field_tag :search %>
-  <%= submit_tag '検索する', :name => nil %>
-<% end %>
-
+<div>
+    <h1>フリーワード検索</h1>
+    <%= form_tag(root_path,:method => 'get') do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag '検索する', :name => nil %>
+    <% end %>
+</div>
 <h1>地域検索</h1>
 <div class="jap">
     <div class="map-header">
         <h2 class="fa fa-search">地域を選んで検索</h2>
     </div>
     <div class="hokkaidou balloon-down">
-        <p class="tab_btn is-active-btn btn-default btn-origin btn" href="#hokkaidou">北海道</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_1">北海道</p>
     </div>
     <div class="tohoku balloon-left">
-        <p class="tab_btn btn-default btn-origin btn" href="#aomori">青森県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#iwate">岩手県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#miyagi">宮城県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#akita">秋田県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#yamagata">山形県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#hukusima">福島県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_2">青森県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_3">岩手県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_4">宮城県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_5">秋田県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_6">山形県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_7">福島県</p>
     </div>
     <div class="kantou balloon-left">
-        <%= link_to"茨城県", area_search_path(id: 8), class: "btn btn-default"%>
-        <%= link_to"栃木県", area_search_path(id: 9), class: "btn btn-default"%>
-        <%= link_to"群馬県", area_search_path(id: 10), class: "btn btn-default"%>
-        <%= link_to"埼玉県", area_search_path(id: 11), class: "btn btn-default"%>
-        <%= link_to"千葉県", area_search_path(id: 12), class: "btn btn-default"%>
-        <%= link_to"東京都", area_search_path(id: 13), class: "btn btn-default"%>
-        <%= link_to"神奈川県", area_search_path(id: 14), class: "btn btn-default"%>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_8">茨城県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_9">栃木県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_10">群馬県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_11">埼玉県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_12">千葉県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_13">東京都</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_14">神奈川県</p>
     </div>
     <div class="tyubu balloon-down">
-        <%= link_to"新潟県", area_search_path(id: 15), class: "btn btn-default"%>
-        <%= link_to"富山県", area_search_path(id: 16), class: "btn btn-default"%>
-        <%= link_to"石川県", area_search_path(id: 17), class: "btn btn-default"%>
-        <%= link_to"福井県", area_search_path(id: 18), class: "btn btn-default"%>
-        <%= link_to"山梨県", area_search_path(id: 19), class: "btn btn-default"%>
-        <%= link_to"長野県", area_search_path(id: 20), class: "btn btn-default"%>
-        <%= link_to"岐阜県", area_search_path(id: 21), class: "btn btn-default"%>
-        <%= link_to"静岡県", area_search_path(id: 22), class: "btn btn-default"%>
-        <%= link_to"愛知県", area_search_path(id: 23), class: "btn btn-default"%>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_15">新潟県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_16">富山県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_17">石川県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_18">福島県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_19">山梨県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_20">長野県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_21">岐阜県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_22">静岡県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_23">愛知県</p>
     </div>
     <div class="kinki balloon-left">
-        <%= link_to"三重県", area_search_path(id: 24), class: "btn btn-default"%>
-        <%= link_to"滋賀県", area_search_path(id: 25), class: "btn btn-default"%>
-        <%= link_to"京都府", area_search_path(id: 26), class: "btn btn-default"%>
-        <%= link_to"大阪府", area_search_path(id: 27), class: "btn btn-default"%>
-        <%= link_to"兵庫県", area_search_path(id: 28), class: "btn btn-default"%>
-        <%= link_to"奈良県", area_search_path(id: 29), class: "btn btn-default"%>
-        <%= link_to"和歌山県", area_search_path(id: 30), class: "btn btn-default"%>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_24">三重県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_25">滋賀県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_26">京都府</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_27">大阪府</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_28">兵庫県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_29">奈良県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_30">和歌山県</p>
     </div>
     <div class="tyugoku balloon-down">
-        <%= link_to"鳥取県", area_search_path(id: 31), class: "btn btn-default"%>
-        <%= link_to"島根県", area_search_path(id: 32), class: "btn btn-default"%>
-        <%= link_to"岡山県", area_search_path(id: 33), class: "btn btn-default"%>
-        <%= link_to"広島県", area_search_path(id: 34), class: "btn btn-default"%>
-        <%= link_to"山口県", area_search_path(id: 35), class: "btn btn-default"%>
+        <p class="tab_btn btn-default btn-origin btn" href="#tottori">鳥取県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#shimane">島根県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#okayama">岡山県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#hiroshima">広島県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#yamaguti">山口県</p>
     </div>
     <div class="sikoku balloon-top">
-        <%= link_to"徳島県", area_search_path(id: 36), class: "btn btn-default"%>
-        <%= link_to"香川県", area_search_path(id: 37), class: "btn btn-default"%>
-        <%= link_to"愛媛県", area_search_path(id: 38), class: "btn btn-default"%>
-        <%= link_to"高知県", area_search_path(id: 39), class: "btn btn-default"%>
+        <p class="tab_btn btn-default btn-origin btn" href="#tokushima">徳島県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#kagawa">香川県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#ehime">愛媛県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#kouti">高知県</p>
     </div>
     <div class="kyusyu balloon-right">
-        <%= link_to"福岡県", area_search_path(id: 40), class: "btn btn-default"%>
-        <%= link_to"佐賀県", area_search_path(id: 41), class: "btn btn-default"%>
-        <%= link_to"長崎県", area_search_path(id: 42), class: "btn btn-default"%>
-        <%= link_to"熊本県", area_search_path(id: 43), class: "btn btn-default"%>
-        <%= link_to"大分県", area_search_path(id: 44), class: "btn btn-default"%>
-        <%= link_to"宮崎県", area_search_path(id: 45), class: "btn btn-default"%>
-        <%= link_to"鹿児島県", area_search_path(id: 46), class: "btn btn-default"%>
+        <p class="tab_btn btn-default btn-origin btn" href="#hukuoka">福岡県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#saga">佐賀県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#nagasaki">長崎県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#kumamoto">熊本県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#kouti">高知県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#miyazaki">宮崎県</p>
+        <p class="tab_btn btn-default btn-origin btn" href="#kagoshima">鹿児島県</p>
     </div>
     <div class="okinawa balloon-right">
-        <%= link_to"沖縄県", area_search_path(id: 47), class: "btn btn-default"%>
+        <p class="tab_btn btn-default btn-origin btn" href="#okinawa">沖縄県</p>
     </div>
 </div>
 <!-- エリア別タブのコンテンツ部分 -->
+<% i = 0%>
+<% @prefectures.each do |prefecture|%>
 <div class="clearfix">
-    <div class="tab_item is-active-item" id="hokkaidou">
-        <h1>北海道</h1>
-        <% @search_hokkaidou.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="aomori">
-        <h1>青森県</h1>
-        <% @search_aomori.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="iwate">
-        <h1>岩手県</h1>
-        <% @search_iwate.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="miyagi">
-        <h1>宮城県</h1>
-        <% @search_miyagi.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="akita">
-        <h1>秋田県</h1>
-        <% @search_akita.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="yamagata">
-        <h1>山形県</h1>
-        <% @search_yamagata.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="hukusima">
-        <h1>福島県</h1>
-        <% @search_hukusima.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="ibaraki">
-        <h1>茨城県</h1>
-        <% @search_ibaraki.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="totigi">
-        <h1>栃木県</h1>
-        <% @search_totigi.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="gunma">
-        <h1>群馬県</h1>
-        <% @search_gunma.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="saitama">
-        <h1>埼玉県</h1>
-        <% @search_saitama.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="tiba">
-        <h1>千葉県</h1>
-        <% @search_tiba.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="tokyo">
-        <h1>東京都</h1>
-        <% @search_tokyo.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="kanagawa">
-        <h1>神奈川県</h1>
-        <% @search_kanagawa.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="niigata">
-        <h1>新潟県</h1>
-        <% @search_niigata.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="toyama">
-        <h1>富山県</h1>
-        <% @search_toyama.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="isikawa">
-        <h1>石川県</h1>
-        <% @search_isikawa.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="hukui">
-        <h1>福井県</h1>
-        <% @search_hukui.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="yamanashi">
-        <h1>山梨県</h1>
-        <% @search_yamanashi.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="nagano">
-        <h1>長野県</h1>
-        <% @search_nagano.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="gihu">
-        <h1>岐阜県</h1>
-        <% @search_gihu.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="sizuoka">
-        <h1>静岡県</h1>
-        <% @search_sizuoka.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="aiti">
-        <h1>愛知県</h1>
-        <% @search_aiti.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="mie">
-        <h1>三重県</h1>
-        <% @search_mie.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="shiga">
-        <h1>滋賀県</h1>
-        <% @search_shiga.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="kyoto">
-        <h1>京都府</h1>
-        <% @search_kyoto.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="oosaka">
-        <h1>大阪府</h1>
-        <% @search_oosaka.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="hyougo">
-        <h1>兵庫県</h1>
-        <% @search_hyougo.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="nara">
-        <h1>奈良県</h1>
-        <% @search_nara.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="wakayama">
-        <h1>和歌山県</h1>
-        <% @search_wakayama.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="tottori">
-        <h1>鳥取県</h1>
-        <% @search_tottori.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="simane">
-        <h1>島根県</h1>
-        <% @search_simane.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="okayama">
-        <h1>岡山県</h1>
-        <% @search_okayama.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="hiroshima">
-        <h1>広島県</h1>
-        <% @search_hiroshima.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="yamaguti">
-        <h1>山口県</h1>
-        <% @search_yamaguti.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="tokushima">
-        <h1>徳島県</h1>
-        <% @search_tokushima.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="kagawa">
-        <h1>香川県</h1>
-        <% @search_kagawa.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="ehime">
-        <h1>愛媛県</h1>
-        <% @search_ehime.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="kouti">
-        <h1>高知県</h1>
-        <% @search_kouti.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="hukuoka">
-        <h1>福岡県</h1>
-        <% @search_hukuoka.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="saga">
-        <h1>佐賀県</h1>
-        <% @search_saga.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="nagasaki">
-        <h1>長崎県</h1>
-        <% @search_nagasaki.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="ooita">
-        <h1>大分県</h1>
-        <% @search_ooita.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="miyazaki">
-        <h1>宮崎県</h1>
-        <% @search_miyazaki.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="kagoshima">
-        <h1>鹿児島県</h1>
-        <% @search_kagoshima.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
-    <div class="tab_item" id="okinawa">
-        <h1>沖縄県</h1>
-        <% @search_okinawa.each do |s| %>
-        <%= render 'users/search_result', user:s %>
-        <% end %>
-    </div>
+<% i += 1 %>
+    <div class="tab_item" id="prefecture_<%= i %>">
+        <h1><%= prefecture[0]%></h1>
+        <% User.where(area_id: i).each do |user| %>
+<div class="col-xs-3">
+ <ul class="list-group">
+      <li class="list-group-item img">&nbsp;&nbsp;&nbsp;<% user.images.first(1).each do |image| %><%= attachment_image_tag image, :image, :fill, 200,120 %><% end %></li>
+      <li class="list-group-item"><strong>施設名</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to (user_path(user)) do %><%= user.name %><% end %></li>
+      <li class="list-group-item"><strong>施設タイプ</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= user.kind_id %></li>
+      <li class="list-group-item"><strong>メールアドレス</strong><br><%= user.email %></li>
+      <li class="list-group-item"><strong>電話番号</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= user.telephone %></li>
+      <li class="list-group-item"><strong>郵便番号</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;〒<%= user.postcode %></li>
+      <li class="list-group-item"><strong>住所</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= user.area_id %><%= user.address %></li>
+</ul>
+<%= link_to"詳しく見る",user_path(user),class:"btn-lg btn-show fas fa-search",style:"padding-top: 10px; padding-bottom: 10px; color:white; margin-bottom: 18px;" %>
 </div>
+        <% end %>
+    </div>
+<% end %>
+</div>
+
 <h1>施設の種類から探す</h1>
 <div class="clearfix">
     <p class="tab_btn is-active-btn btn-default btn-origin" href="#item1">介護付有料老人ホーム</p>
