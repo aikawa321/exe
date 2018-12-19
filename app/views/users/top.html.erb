@@ -21,67 +21,75 @@
     <div class="hokkaidou balloon-down">
         <p class="tab_btn btn-default btn-origin btn" href="#prefecture_1">北海道</p>
     </div>
+
     <div class="tohoku balloon-left">
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_2">青森県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_3">岩手県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_4">宮城県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_5">秋田県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_6">山形県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_7">福島県</p>
+    <% i = 0%>
+    <% @prefectures.first(7).each do |prefecture|%>
+    <% i += 1 %>
+        <% if  i != 1%>
+            <p class="tab_btn btn-default btn-origin btn del-pad" href="#prefecture_<%= i %>"><%= prefecture[0]%></p>
+        <% end %>
+    <% end %>
     </div>
+
     <div class="kantou balloon-left">
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_8">茨城県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_9">栃木県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_10">群馬県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_11">埼玉県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_12">千葉県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_13">東京都</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_14">神奈川県</p>
+    <% i = 0%>
+    <% @prefectures.first(14).each do |prefecture|%>
+    <% i += 1 %>
+        <% if  i > 7%>
+            <p class="tab_btn btn-default btn-origin btn del-pad" href="#prefecture_<%= i %>"><%= prefecture[0]%></p>
+        <% end %>
+    <% end %>
     </div>
+
     <div class="tyubu balloon-down">
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_15">新潟県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_16">富山県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_17">石川県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_18">福島県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_19">山梨県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_20">長野県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_21">岐阜県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_22">静岡県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_23">愛知県</p>
+    <% i = 0%>
+    <% @prefectures.first(23).each do |prefecture|%>
+    <% i += 1 %>
+        <% if  i > 14%>
+            <p class="tab_btn btn-default btn-origin btn del-pad" href="#prefecture_<%= i %>"><%= prefecture[0]%></p>
+        <% end %>
+    <% end %>
     </div>
+
     <div class="kinki balloon-left">
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_24">三重県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_25">滋賀県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_26">京都府</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_27">大阪府</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_28">兵庫県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_29">奈良県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_30">和歌山県</p>
+    <% i = 0%>
+    <% @prefectures.first(30).each do |prefecture|%>
+    <% i += 1 %>
+        <% if  i > 23%>
+            <p class="tab_btn btn-default btn-origin btn del-pad" href="#prefecture_<%= i %>"><%= prefecture[0]%></p>
+        <% end %>
+    <% end %>
     </div>
     <div class="tyugoku balloon-down">
-        <p class="tab_btn btn-default btn-origin btn" href="#tottori">鳥取県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#shimane">島根県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#okayama">岡山県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#hiroshima">広島県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#yamaguti">山口県</p>
+    <% i = 0%>
+    <% @prefectures.first(35).each do |prefecture|%>
+    <% i += 1 %>
+        <% if  i > 30%>
+            <p class="tab_btn btn-default btn-origin btn del-pad" href="#prefecture_<%= i %>"><%= prefecture[0]%></p>
+        <% end %>
+    <% end %>
     </div>
     <div class="sikoku balloon-top">
-        <p class="tab_btn btn-default btn-origin btn" href="#tokushima">徳島県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#kagawa">香川県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#ehime">愛媛県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#kouti">高知県</p>
+        <% i = 0%>
+    <% @prefectures.first(39).each do |prefecture|%>
+    <% i += 1 %>
+        <% if  i > 35%>
+            <p class="tab_btn btn-default btn-origin btn del-pad" href="#prefecture_<%= i %>"><%= prefecture[0]%></p>
+        <% end %>
+    <% end %>
     </div>
     <div class="kyusyu balloon-right">
-        <p class="tab_btn btn-default btn-origin btn" href="#hukuoka">福岡県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#saga">佐賀県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#nagasaki">長崎県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#kumamoto">熊本県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#kouti">高知県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#miyazaki">宮崎県</p>
-        <p class="tab_btn btn-default btn-origin btn" href="#kagoshima">鹿児島県</p>
+        <% i = 0%>
+    <% @prefectures.first(46).each do |prefecture|%>
+    <% i += 1 %>
+        <% if  i > 39%>
+            <p class="tab_btn btn-default btn-origin btn del-pad" href="#prefecture_<%= i %>"><%= prefecture[0]%></p>
+        <% end %>
+    <% end %>
     </div>
     <div class="okinawa balloon-right">
-        <p class="tab_btn btn-default btn-origin btn" href="#okinawa">沖縄県</p>
+        <p class="tab_btn btn-default btn-origin btn del-pad" href="#okinawa">沖縄県</p>
     </div>
 </div>
 <!-- エリア別タブのコンテンツ部分 -->
@@ -91,19 +99,8 @@
 <% i += 1 %>
     <div class="tab_item" id="prefecture_<%= i %>">
         <h1><%= prefecture[0]%></h1>
-        <% User.where(area_id: i).each do |user| %>
-<div class="col-xs-3">
- <ul class="list-group">
-      <li class="list-group-item img">&nbsp;&nbsp;&nbsp;<% user.images.first(1).each do |image| %><%= attachment_image_tag image, :image, :fill, 200,120 %><% end %></li>
-      <li class="list-group-item"><strong>施設名</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to (user_path(user)) do %><%= user.name %><% end %></li>
-      <li class="list-group-item"><strong>施設タイプ</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= user.kind_id %></li>
-      <li class="list-group-item"><strong>メールアドレス</strong><br><%= user.email %></li>
-      <li class="list-group-item"><strong>電話番号</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= user.telephone %></li>
-      <li class="list-group-item"><strong>郵便番号</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;〒<%= user.postcode %></li>
-      <li class="list-group-item"><strong>住所</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= user.area_id %><%= user.address %></li>
-</ul>
-<%= link_to"詳しく見る",user_path(user),class:"btn-lg btn-show fas fa-search",style:"padding-top: 10px; padding-bottom: 10px; color:white; margin-bottom: 18px;" %>
-</div>
+        <% User.where(area_id: i).each do |s| %>
+        <%= render 'users/search_result', user:s %>
         <% end %>
     </div>
 <% end %>
