@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :received_messages, through: :to_messages, source: :to
   has_many :images
   accepts_attachments_for :images, attachment: :image
-
+  has_many :reviews
  geocoded_by :address
  before_validation :geocode
 
@@ -20,9 +20,7 @@ class User < ApplicationRecord
   def send_message(other_user, room_id, content)
     from_messages.create!(to_id: other_user.id, room_id: room_id, content: content)
   end
-  enum lank_id: {
-    ★☆☆☆☆:1,★★☆☆☆:2,★★★☆☆:3,★★★★☆:4,★★★★★:5
-  }
+
  enum area_id:{
   北海道:1,青森県:2,岩手県:3,宮城県:4,秋田県:5,山形県:6,福島県:7,
     茨城県:8,栃木県:9,群馬県:10,埼玉県:11,千葉県:12,東京都:13,神奈川県:14,

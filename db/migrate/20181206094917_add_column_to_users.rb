@@ -6,9 +6,8 @@ class AddColumnToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :image_id, :string
     add_column :users, :url, :string
     add_column :users, :introduction, :text
-    add_column :users, :lank, :integer
     add_column :users, :kind_id, :integer
-    add_column :users, :review_id, :integer
     add_column :users, :area_id, :integer
+    add_column :users, :admin, :boolean, default: false
   end
 end

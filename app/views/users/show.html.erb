@@ -2,30 +2,76 @@
   <div class="row">
       <aside class="col-md-8">
           <ul class="list-group">
+              <div><%= @user.kind_id %></div>
             <li class="list-group-item list-group-item-info" style="text-align: center; background-color: #f8f8f8;　border-color: #e7e7e7; color:black;"><strong><%= @user.name %></strong></li>
             <li class="list-group-item"><%= render 'users/swiper', images: @images %></li>
             <li class="list-group-item"><strong>施設名</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.name %></li>
+            <li class="list-group-item"><strong>施設タイプ</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= @user.kind_id %></li>
             <li class="list-group-item"><strong>メールアドレス</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= @user.email %></li>
             <li class="list-group-item"><strong>電話番号</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= @user.telephone %></li>
             <li class="list-group-item"><strong>郵便番号</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;〒<%= @user.postcode %></li>
-            <li class="list-group-item"><strong>住所</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.address %></li>
+            <li class="list-group-item"><strong>住所</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.area_id %><%= @user.address %></li>
             <li class="list-group-item"><strong>紹介文</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.introduction %></li>
-            <li class="list-group-item"><strong>紹介動画</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.url %></li>
-            <li class="list-group-item"><strong>評価ランク</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>☆★★★★(4.0)</li>
-            <li class="list-group-item"><strong>最新口コミ</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>(user.reviews)とても親切な介護士さんが多く在籍している印象です。体験入所で丁寧な案内をしていただきました、満足しています</li>
+            <li class="list-group-item"><strong>平均評価</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="field" id="average"></span>
+            <li class="list-group-item"><strong>最新口コミ</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<% @user.reviews.first(1).each do |review| %><%= review.content %><% end %></li>
           </ul>
             <iframe
               width="100%"
               height="450"
               frameborder="0" style="border:0"
-              src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDImgYaMym5UukQ3IVw25uaDpFZFAIQiVo&q=<%= @user.address %><" allowfullscreen>
+              src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDImgYaMym5UukQ3IVw25uaDpFZFAIQiVo&q=<%= @user.area_id %><%= @user.address %><" allowfullscreen>
             </iframe>
+            <% if user_signed_in? %>
             <% if @user.id == current_user.id %>
              <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-success " %></p>
             <% end %>
+            <% end %>
+      <%= form_for @review, url: review_create_path(id: @user.id) do |f| %>
+        <div class="">
+          <div class="field" id="star">
+            <%= f.label :star %>
+            <%= f.hidden_field :star, id: :review_star %>
+          </div>
+            <%= f.text_field :name ,placeholder: "名前(ニックネーム)", class:"form-control"%>
+            <%= f.text_area :content, :class => "form-control", :size => "50x20"  %><br>
+            <%= f.submit "レビュー評価", :class => "btn btn-primary" %>
+        </div>
+      <% end %>
+        <script>
+        $('#star').raty({
+          size     : 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          scoreName: 'review[star]'
+        });
+        </script>
+
+        <% @user.reviews.each do |review| %>
+        <div>
+          <ul class="list-group" style= "padding-top: 10px;">
+            <li class="list-group-item">評価：<span class="field" id="<%= review.id %>"></span></li>
+            <li class="list-group-item">ニックネーム：<%= review.name %></li>
+            <li class="list-group-item">書き込み日時：<%= review.created_at.strftime('%Y/%m/%d') %></li>
+            <li class="list-group-item">レビュー：<%= review.content %></li>
+          </ul>
+        </div>
+        <script>
+        $('#<%= review.id %>').raty({
+          size     : 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          scoreName: 'review[star]',
+          score: '<%= review.star %>',
+          half: true,
+          readOnly: true
+        });
+        </script>
+        <% end %>
       </aside>
+<% if user_signed_in? %>
       <aside class="col-md-4">
-        <% if @user != current_user && logger %>
+        <% if logger && @user != current_user %>
           <section class="message_box">
             <div id="messages">
               <%= render @messages %>
@@ -42,7 +88,20 @@
           <%= render 'messages/message_form',
             {from_user: current_user, to_user: @user, room_id: @room_id} %>
           </div>
-        <% end %>
+         <% end %>
       </aside>
+      <% end %>
   </div>
+  <script>
+        $('#average').raty({
+          size     : 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          scoreName: 'review[star]',
+          score: '<%= @average %>',
+          half: true,
+          readOnly: true
+        });
+        </script>
 </div>
