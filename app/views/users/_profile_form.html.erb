@@ -31,6 +31,10 @@
     <%= f.label :紹介文 %><br />
     <%= f.text_field :introduction ,placeholder: "施設の紹介文をご入力ください。", class:"form-control"  %>
 </div>
+<div class="field">
+    <%= f.label :資料請求WEB版ファイルリンク %><br />
+    <%= f.text_field :url ,placeholder: "リンク化したPDFファイル等のurlをここに貼り付けてください。", class:"form-control"  %>
+</div>
 <div class="field ">
 <%= f.label :メイン画像 %>
   <%= f.attachment_field :images_images, multiple: true %>
