@@ -1,3 +1,4 @@
+<% unless user.try(:admin?) %>
 <div class="col-xs-3">
  <ul class="list-group">
       <li class="list-group-item img">&nbsp;&nbsp;&nbsp;<% user.images.first(1).each do |image| %><%= attachment_image_tag image, :image, :fill, 200,120 %><% end %></li>
@@ -11,6 +12,7 @@
 </ul>
 <%= link_to"詳しく見る",user_path(user),class:"btn-lg btn-show fas fa-search",style:"padding-top: 10px; padding-bottom: 10px; color:white; margin-bottom: 18px;" %>
 </div>
+<% end %>
 <script>
         // $('#<%= user.id %>').raty({
         //   size     : 36,
