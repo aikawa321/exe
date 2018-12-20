@@ -1,7 +1,7 @@
 <div class="swiper-container gallery-top">
     <div class="swiper-wrapper">
 <% images.each do |image| %>
-      <div class="swiper-slide background-image"><%= attachment_image_tag image, :image, :fill, 800,400 %></div>
+      <div class="swiper-slide background-image swiper-image"><%= attachment_image_tag image, :image, :fill, 800,400 %></div>
       <% end %>
     </div>
     <!-- Add Arrows -->

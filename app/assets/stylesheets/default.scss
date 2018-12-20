@@ -312,10 +312,20 @@ color:#e91e63;
 	margin : 2px auto;
 	padding: 0 auto;
 }
-
+.free-search{
+	padding-bottom: 10px;
+}
 
 /* navbar 画面サイズ767px以下の時のカラー */
 @media (max-width:767px) {
+body {
+ padding-top: 220px;
+ background: linear-gradient(#ffffff, #fce4ec,#ffffff);
+}
+img.attachment{
+height: 274px;
+width: 100%;
+}
 .navbar-default .navbar-nav .open .dropdown-menu>li>a {
 color: #ffffff;
 }

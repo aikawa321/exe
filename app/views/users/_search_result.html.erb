@@ -1,5 +1,6 @@
 <% unless user.try(:admin?) %>
-<div class="col-xs-3">
+<div>
+<div class="col-lg-3 col-md-4 col-xs-12">
  <ul class="list-group">
       <li class="list-group-item img">&nbsp;&nbsp;&nbsp;<% user.images.first(1).each do |image| %><%= attachment_image_tag image, :image, :fill, 200,120 %><% end %></li>
       <li class="list-group-item"><strong>施設名</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to (user_path(user)) do %><%= user.name %><% end %></li>
@@ -13,6 +14,7 @@
 <%= link_to"詳しく見る",user_path(user),class:"btn-lg btn-show fas fa-search",style:"padding-top: 10px; padding-bottom: 10px; color:white; margin-bottom: 18px;" %>
 </div>
 <% end %>
+</div>
 <script>
         // $('#<%= user.id %>').raty({
         //   size     : 36,
