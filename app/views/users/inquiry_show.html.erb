@@ -1,0 +1,23 @@
+<% if user_signed_in? %>
+        <aside class="col-md-8 col-xs-12">
+          <% if logger && @user == current_user %>
+          <h2>お問い合わせ詳細</h2>
+          <div>
+            <ul class="list-group" style= "padding-top: 10px;">
+              <li class="list-group-item">お客様のお名前：<%= @inquiry.name %></li>
+              <li class="list-group-item">お客様の電話番号：<%= @inquiry.telephone %></li>
+              <li class="list-group-item">お客様のアドレス：<%= @inquiry.email %></li>
+              <li class="list-group-item">お客様の郵便番号：<%= @inquiry.postcode %></li>
+              <li class="list-group-item">お客様のご住所：<%= @inquiry.address %></li>
+              <li class="list-group-item">お問い合わせ日時：<%= @inquiry.created_at %></li>
+              <li class="list-group-item">内容：<%= @inquiry.content %></li>
+            </ul>
+          </div>
+          <% end %>
+        </aside>
+        <%= link_to "Delete",inquiry_destroy_path(inquiry_id: @inquiry.id),method: :delete, class: "btn-sm btn-danger" %>
+<% else %>
+<h3>このページは存在しません。</h3>
+<h4>Not found this pages.</h4>
+<%= link_to"トップページへ戻る",root_path %>
+<% end %>

@@ -19,7 +19,27 @@ class UsersController < ApplicationController
   def new
     @user.images.build
     @user.reviews.build
+    @user.inquiries.build
   end
+  def inquiry_create
+    @user = User.find(params[:id])
+     @inquiry = Inquiry.new(content: params[:inquiry][:content], user_id: @user.id, name: params[:inquiry][:name], type_id: params[:inquiry][:type_id], email: params[:inquiry][:email],address: params[:inquiry][:address], postcode: params[:inquiry][:postcode])
+     if @inquiry.save
+      redirect_to user_path(@user)
+     end
+  end
+  def inquiry_show
+    @user = User.find(params[:id])
+    @inquiry = Inquiry.find(params[:inquiry_id])
+  end
+  def inquiry_destroy
+    @user = User.find(params[:id])
+
+      @inquiry = Inquiry.find(params[:inquiry_id])
+      @inquiry.destroy
+      redirect_to user_path(@user), notice: "Deleted successfully"
+  end
+
   def review_create
     @user = User.find(params[:id])
      @review = Review.new(content: params[:review][:content], user_id: @user.id, name: params[:review][:name], star: params[:review][:star])
@@ -36,6 +56,8 @@ class UsersController < ApplicationController
     @messages = Message.recent_in_room(@room_id)
      end
      @review = Review.new
+     @inquiry = Inquiry.new
+     @inquiries =Inquiry.where(user_id: @user.id)
      @average = Review.where(user_id: @user.id).average(:star)
   end
 

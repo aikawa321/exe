@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :images
   accepts_attachments_for :images, attachment: :image
   has_many :reviews
+  has_many :inquiries, :dependent => :destroy
  geocoded_by :address
  before_validation :geocode
 
