@@ -96,7 +96,6 @@
 <!-- エリア別タブのコンテンツ部分 -->
 <% i = 0%>
 <% @prefectures.each do |prefecture|%>
-<div class="clearfix">
 <% i += 1 %>
     <div class="tab_item" id="prefecture_<%= i %>">
         <h1><%= prefecture[0]%></h1>
@@ -105,7 +104,6 @@
         <% end %>
     </div>
 <% end %>
-</div>
 <div class="clearfix">
     <h1>施設の種類から探す</h1>
 </div>
