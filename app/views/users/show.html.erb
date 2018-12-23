@@ -15,7 +15,7 @@
             <% if @user.url != nil %>
             <li class="list-group-item"><strong>WEB資料</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%= @user.url %>">WEB版資料請求はコチラ</a></li>
             <% end %>
-            <li class="list-group-item"><strong>平均評価</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="field" id="average"></span>
+            <li class="list-group-item"><strong>平均評価</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="field" id="average"></span></li>
             <li class="list-group-item"><strong>最新口コミ</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<% @user.reviews.first(1).each do |review| %><%= review.content %><% end %></li>
           </ul>
             <iframe
@@ -29,7 +29,39 @@
              <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-success " %></p>
             <% end %>
             <% end %>
-      <%= form_for @review, url: review_create_path(id: @user.id) do |f| %>
+
+           <div>
+              <%= form_for @inquiry, url: inquiry_create_path(id: @user.id) do |f| %>
+            <div class="">
+                <%= f.text_field :name ,placeholder: "名前", class:"form-control"%>
+                <%= f.text_field :email ,placeholder: "メールアドレス", class:"form-control"%>
+                <%= f.text_field :telephone ,placeholder: "電話", class:"form-control"%>
+                <%= f.text_field :postcode ,placeholder: "郵便番号", class:"form-control"%>
+                <%= f.text_field :address ,placeholder: "住所", class:"form-control"%>
+                <%= f.select :type_id, Inquiry.type_ids.keys, {prompt: '選択してください'}, class:"form-control" %>
+                <%= f.text_area :content, :class => "form-control", :size => "50x20"  %><br>
+                <%= f.submit "お問い合わせ送信", :class => "btn btn-primary" %>
+            </div>
+          <% end %>
+          </div>
+        <% if user_signed_in? %>
+
+          <% if logger && @user == current_user %>
+          <h2>お問い合わせ一覧</h2>
+          <% @user.inquiries.each do |inquiry| %>
+          <div>
+            <ul class="list-group" style= "padding-top: 10px;">
+            <%= link_to inquiry_show_path(id: @user.id, inquiry_id: inquiry.id) do %>
+              <li class="list-group-item">お客様のお名前：<%= inquiry.name %></li>
+            <% end %>
+            </ul>
+            <% end %>
+          </div>
+          <% end %>
+        <% end %>
+        </aside>
+        <aside class="col-md-8 col-xs-12">
+        <%= form_for @review, url: review_create_path(id: @user.id) do |f| %>
         <div class="">
           <div class="field" id="star">
             <%= f.label :star %>
@@ -39,7 +71,7 @@
             <%= f.text_area :content, :class => "form-control", :size => "50x20"  %><br>
             <%= f.submit "レビュー評価", :class => "btn btn-primary" %>
         </div>
-      <% end %>
+        <% end %>
         <script>
         $('#star').raty({
           size     : 36,
@@ -58,6 +90,7 @@
             <li class="list-group-item">レビュー：<%= review.content %></li>
           </ul>
         </div>
+
         <script>
         $('#<%= review.id %>').raty({
           size     : 36,
@@ -71,8 +104,8 @@
         });
         </script>
         <% end %>
-      </aside>
-<% if user_signed_in? %>
+    </aside>
+          <% if user_signed_in? %>
       <aside class="col-md-4 col-xs-12">
         <% if logger && @user != current_user %>
           <section class="message_box">
@@ -93,8 +126,8 @@
           </div>
          <% end %>
       </aside>
+    </div>
       <% end %>
-  </div>
   <script>
         $('#average').raty({
           size     : 36,
@@ -107,9 +140,9 @@
           readOnly: true
         });
         </script>
-</div>
 <% else %>
 <h3>このページは存在しません。</h3>
 <h4>Not found this pages.</h4>
 <%= link_to"トップページへ戻る",root_path %>
 <% end %>
+</div>

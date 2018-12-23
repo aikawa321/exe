@@ -1,6 +1,6 @@
 <% unless user.try(:admin?) %>
 <div>
-<div class="col-lg-3 col-md-4 col-xs-12">
+<div class="col-lg-6 col-md-6 col-xs-12">
  <ul class="list-group">
       <li class="list-group-item img">&nbsp;&nbsp;&nbsp;<% user.images.first(1).each do |image| %><%= attachment_image_tag image, :image, :fill, 200,120 %><% end %></li>
       <li class="list-group-item"><strong>施設名</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to (user_path(user)) do %><%= user.name %><% end %></li>

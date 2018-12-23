@@ -1,3 +1,6 @@
+<div class="row">
+<div class="col-lg-2 col-md-2"></div>
+<div class="col-lg-8 col-xs-8 col-xs-12">
 <div class="main-visual">
   <div class="message-container">
     <h2 class="top-message">『あなたを支えたい』がここにある。</h2>
@@ -7,12 +10,16 @@
 </div>
 
 <h1>地域検索</h1>
-<div class="jap">
+<div class="map-container clearfix">
+<div class="map-inbox">
+    <div class="jap">
+    <%= image_tag 'jap.png' %>
+    </div>
     <div class="map-header">
         <h2 class="fa fa-search">地域を選んで検索</h2>
     </div>
     <div class="hokkaidou balloon-down">
-        <p class="tab_btn btn-default btn-origin btn" href="#prefecture_1">北海道</p>
+        <p class="tab_btn btn-default btn-origin btn del-pad" href="#prefecture_1">北海道</p>
     </div>
 
     <div class="tohoku balloon-left">
@@ -85,6 +92,7 @@
         <p class="tab_btn btn-default btn-origin btn del-pad" href="#okinawa">沖縄県</p>
     </div>
 </div>
+</div>
 <!-- エリア別タブのコンテンツ部分 -->
 <% i = 0%>
 <% @prefectures.each do |prefecture|%>
@@ -98,8 +106,9 @@
     </div>
 <% end %>
 </div>
-
-<h1>施設の種類から探す</h1>
+<div class="clearfix">
+    <h1>施設の種類から探す</h1>
+</div>
 <div class="clearfix">
     <p class="tab_btn is-active-btn btn-default btn-origin" href="#item1">介護付有料老人ホーム</p>
     <p class="tab_btn btn-default btn-origin" href="#item2">住宅型有料老人ホーム</p>
@@ -218,4 +227,7 @@
 <% @users.each do |s|  %>
  <%= render'users/search_result',user:s %>
  <% end %>
+</div>
+</div>
+<div class="col-lg-2 col-md-2"></div>
 </div>
