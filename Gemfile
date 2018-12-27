@@ -70,3 +70,11 @@ gem "geocoder"
 gem "pry-rails"
 gem 'rails_admin', '~> 1.3'
 gem 'cancancan', '~> 2.0'
+
+group :development do
+  gem 'capistrano', '3.7.0'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-rbenv-vars'
+end
