@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   end
   def inquiry_create
     @user = User.find(params[:id])
-     @inquiry = Inquiry.new(content: params[:inquiry][:content], user_id: @user.id, name: params[:inquiry][:name], type_id: params[:inquiry][:type_id], email: params[:inquiry][:email],address: params[:inquiry][:address], postcode: params[:inquiry][:postcode])
+     @inquiry = Inquiry.new(content: params[:inquiry][:content], user_id: @user.id, name: params[:inquiry][:name], type_id: params[:inquiry][:type_id], email: params[:inquiry][:email],address: params[:inquiry][:address], postcode: params[:inquiry][:postcode],telephone: params[:inquiry][:telephone])
      if @inquiry.save
       redirect_to user_path(@user)
      end
